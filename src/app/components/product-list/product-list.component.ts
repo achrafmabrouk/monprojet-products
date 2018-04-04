@@ -13,6 +13,8 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() { // Equivalent @postConstruct JEE
-    this.data = this._service.getProducts();
+    this._service.getProducts().subscribe(
+      result => {this.data = result; }
+    );
   }
 }
